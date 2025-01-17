@@ -1,0 +1,33 @@
+# Python 기본
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd
+
+# 환경 설정
+.env
+*.env
+
+# Django 기본
+db.sqlite3
+*.sqlite3
+
+# Static & Media 파일 (배포 환경에서는 따로 관리)
+staticfiles/
+media/
+
+# 가상환경
+venv/
+.env/
+*.egg-info/
+
+# IDE/Editor
+.idea/
+.vscode/
+
+# OS에서 생성하는 파일
+.DS_Store
+Thumbs.db
