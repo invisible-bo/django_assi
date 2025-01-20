@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Bo's Web{% endblock %}</title>
+     <!-- CSS 파일 연결 -->
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Bo's Web</h1>
+        <nav>
+            {% if user.is_authenticated %}
+                <p>안녕하세요, {{ user.username }}님!</p>
+                <a href="{% url 'logout' %}">로그아웃</a>
+            {% else %}
+                <a href="{% url 'signup' %}">회원가입</a>
+                <a href="{% url 'login' %}">로그인</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>2025 Bo's web</p>
+    </footer>
+
+</body>
+</html>

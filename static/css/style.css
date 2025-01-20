@@ -1,0 +1,42 @@
+html, body {
+    height: 100%; /* HTML과 Body의 높이를 화면 전체로 설정 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* 콘텐츠를 세로 방향으로 배치 */
+}
+
+body {
+    background-color: #000000 !important; 
+    color: #ffffff; 
+    font-family: 'Arial', sans-serif;
+}
+
+/* 메인 영역 */
+main {
+    flex: 1; /* 남는 공간을 메인이 차지하도록 설정 */
+}
+
+/* 헤더와 네비게이션 바 스타일 */
+header {
+    background-color: #6200ea;
+    color: white;
+    padding: 10px 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #6200ea;
+    text-align: center;
+    padding: 10px 0;
+}

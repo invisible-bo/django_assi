@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}게시글 목록{% endblock %}
+{% block content %}
+<h2>게시글 목록</h2>
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="{% url 'post:post_detail' post.id %}">{{ post.title }}</a>
+            <p>username: {{ post.author.username }}</p> 
+            <img src="{{ post.author.profile_image.url|default:'/static/default_images/default_profile.png' }}" alt="Profile Image" style="max-width: 30px; max-height: 30px; border-radius: 50%;">
+            <p>{{ post.created_at }}</p>
+        </li>
+    {% empty %}
+        <p>게시글이 없습니다.</p>
+    {% endfor %}
+</ul>
+<a href="{% url 'post:post_create' %}">게시글 작성</a>
+{% endblock %}

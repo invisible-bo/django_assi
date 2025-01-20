@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %}프로필{% endblock %}
+
+{% block content %}
+<h3>{{ user.username }}의 프로필</h3>
+<img src="{{ user.profile_image.url }}" alt="Profile Image" style="max-width: 200px; max-height: 200px;">
+<p><strong>Bio:</strong> {{ user.bio }}</p>
+<a href="/">홈으로 이동</a>
+{% endblock %}

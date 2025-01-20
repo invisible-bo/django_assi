@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}게시글 상세 보기{% endblock %}
+{% block content %}
+<h2>{{ post.title }}</h2>
+<p>{{ post.content }}</p>
+<p>username: {{ post.author.username }}</p> 
+<p>작성일: {{ post.created_at }}</p>
+<p>수정일: {{ post.updated_at }}</p>
+
+
+{% if post.author == user %}
+    <a href="{% url 'post:post_update' post.id %}">수정</a>
+    <a href="{% url 'post:post_delete' post.id %}">삭제</a>
+{% endif %}
+
+<a href="{% url 'post:post_list' %}">목록으로 돌아가기</a>
+{% endblock %}
